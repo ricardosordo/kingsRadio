@@ -26,6 +26,18 @@
   height: 20rem;
 }
 
+.card_playList{
+  position: absolute;
+  width: 70%;
+  height: 400px;
+  left: 15vw;
+  top: 14rem;
+  background: #2D2C2C;
+  box-shadow: 0px 14px 22px rgba(0, 0, 0, 0.36);
+  border-radius: 38px;
+  color: aliceblue;
+}
+
 @media screen and (max-width: 992px) {
 
 }  

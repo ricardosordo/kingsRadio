@@ -31,7 +31,7 @@ export default function Home() {
           <h1>Ahora sonando</h1>
         </div>
       </div>
-      <div className="card_playList">
+      <div className={`${styles.card_playList}`}>
         <p>Foto</p>
         <p>Botones de Reproductor</p>
         <p>social media</p>

@@ -38,6 +38,65 @@
   color: aliceblue;
 }
 
+.broadcasterPic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.billboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.billboard_title {
+  font-size: 32px;
+}
+
+.billboard_social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.billboard_social img {
+  margin: 6px;
+}
+
+.billboard_broadcaster {
+  font-size: 28px;
+}
+
+.events_title {
+  text-align: center;
+  padding-top: 18rem;
+}
+
+.events_carousel {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.events_cards {
+  border-radius: 20px;
+}
+
+.events_cards img {
+  border-radius: 20px 20px 0 0;
+}
+
+.events_descriprion {
+  font-size: 18px;
+}
+
+
+.programs {
+  text-align: center;
+}
+
 @media screen and (max-width: 992px) {
 
 }  

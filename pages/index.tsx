@@ -4,9 +4,40 @@ import "bootstrap/dist/css/bootstrap.css";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import CardCarousel  from '../helpers/CardCarousel'
+//images
 import logoKings from "../assets/logoKings.svg";
+import miyoReyes from "../assets/miyo.svg";
+import facebookLogo from "../assets/facebook.svg";
+//testing
+import tecate from '../assets/tecate.jpeg';
 
 export default function Home() {
+
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
+
+
   return (
     <>
       <Head>
@@ -31,19 +62,55 @@ export default function Home() {
           <h1>Ahora sonando</h1>
         </div>
       </div>
-      <div className={`${styles.card_playList}`}>
-        <p>Foto</p>
-        <p>Botones de Reproductor</p>
-        <p>social media</p>
-        <p>Nombre locutor</p>
-      </div>
-      <div className="row events">
-        <div className="col-12">
-          <h2>Soy Eventos</h2>
+      <div className={`row ${styles.card_playList}`}>
+        <div className={`col-6 ${styles.broadcasterPic}`}>
+          <Image 
+          src={miyoReyes}
+          width={350}
+          height={350}
+          alt="Foto de Locutor" />
+        </div>
+        <div className={`col-6 ${styles.billboard}`}>
+          <p>Botones de Reproductor</p>
+          <p className={`${styles.billboard_title}`}>Historias y Leyendas de México</p>
+            <div className={`row ${styles.billboard_social}`}>
+              <div className="col-8">
+                <Image 
+                src={facebookLogo}
+                width={40}
+                height={40}
+                alt="Logo Facebook" />
+                 <Image 
+                src={facebookLogo}
+                width={40}
+                height={40}
+                alt="Logo Facebook" />
+                 <Image 
+                src={facebookLogo}
+                width={40}
+                height={40}
+                alt="Logo Facebook" />
+              </div>
+            
+            </div>
+          <p className={`${styles.billboard_broadcaster}`}>Con Miyo Reyes</p>
         </div>
       </div>
-      <div className="row programs">
-        <div className="col-12">
+      <div className="row">
+        <div className={`col-12 ${styles.events_title}`}>
+          <h2>Eventos</h2>
+        </div>
+        <div className={`col-12 ${styles.events_carousel}`} >
+          <Carousel responsive={responsive}>
+            <div><CardCarousel eventPic={tecate} /></div>
+            <div><CardCarousel eventPic={tecate} /></div>
+            <div><CardCarousel eventPic={tecate} /></div>
+            <div><CardCarousel eventPic={tecate} /></div>
+          </Carousel>
+        </div>
+      </div>
+      <div className="row">
+        <div className={`col-12 ${styles.programs}`}>
           <h2>Soy Programas</h2>
         </div>
         <div className="row dj">

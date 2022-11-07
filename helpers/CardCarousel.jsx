@@ -8,7 +8,7 @@ const CardCarousel = ({ eventPic }) => {
         <Image src={eventPic} className="card-img-top" alt="..." />
     <div className="card-body">
     <p className={`${styles.events_description}`}><b>Tecate pal Norte</b></p>  
-    <p>Conoce más</p>          
+    <p style={{'fontWeight' : '400'}}>Conoce más</p>          
     </div>
     </div> 
   )

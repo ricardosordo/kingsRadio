@@ -73,6 +73,7 @@
 .events_title {
   text-align: center;
   margin-top: 19rem;
+  margin-bottom: 2rem;
 }
 
 .events_carousel {
@@ -154,6 +155,49 @@
   display: flex;
   align-items: center;
   align-self: center;
+}
+
+.djSection_bg {
+  background-color: #F5F5F5;
+  padding-bottom: 6rem;
+}
+
+.djSection_title {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.djSection_content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.djSection_content img {
+  align-self: center;
+}
+
+.djSection_content_name {
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+
+.djSection_content_title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: rgba(131, 56, 236, 1);
+}
+
+.djSection_content_copy {
+  font-size: 20px;
+  margin: 0 4rem;
+}
+
+.sponsors_title {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
 }
 
 

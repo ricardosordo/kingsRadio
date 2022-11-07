@@ -13,6 +13,7 @@ import logoKings from "../assets/logoKings.svg";
 import miyoReyes from "../assets/miyo.svg";
 import cory from "../assets/cory.svg";
 import tibu from "../assets/tibu.svg";
+import mikeAguilar from "../assets/mikeAguilar.svg";
 import facebookLogo from "../assets/facebook.svg";
 //testing
 import tecate from "../assets/tecate.jpeg";
@@ -25,7 +26,8 @@ export default function Home() {
     background: "linear-gradient(108.81deg, #6637EC -20.88%, #110338 121.48%)",
   };
   const purple = {
-    background: "linear-gradient(110.39deg, #3E0AD1 -0.21%, #3674DE 71.94%, #06E3D6 113.27%)",
+    background:
+      "linear-gradient(110.39deg, #3E0AD1 -0.21%, #3674DE 71.94%, #06E3D6 113.27%)",
   };
 
   const responsive = {
@@ -114,6 +116,7 @@ export default function Home() {
       <div className="row">
         <div className={`col-12 ${styles.events_title}`}>
           <h2>Eventos</h2>
+          <h3>Experiencias que recomendamos no perderte</h3>
         </div>
         <div className={`col-12 ${styles.events_carousel}`}>
           <Carousel responsive={responsive}>
@@ -168,19 +171,51 @@ export default function Home() {
             />
           </div>
         </div>
-
-        <div className="row dj">
-          <div className="col-12"></div>
-        </div>
-        <div className="row sponsors">
-          <div className="col-12">
-            <h2>Soy Patrocinador</h2>
+        <div className={`row ${styles.djSection_bg}`}>
+          <div className={`col-12 ${styles.djSection_title}`}>
+            <h2>Los mejores DJs</h2>
+            <h3>Las tornamesas más poderosas de la radio</h3>
+          </div>
+          <div className={`col-6 ${styles.djSection_content}`}>
+            <Image
+              src={mikeAguilar}
+              width={420}
+              height={420}
+              alt="Logo Facebook"
+            />
+            <p className={styles.djSection_content_name}>Mike Aguilar</p>
+            <p className={styles.djSection_content_title}>Factor Cumbia</p>
+            <p className={styles.djSection_content_copy}>
+              Los programa más escuchados de la radio de habla hispana
+            </p>
+          </div>
+          <div className={`col-6 ${styles.djSection_content}`}>
+            <Image
+              src={mikeAguilar}
+              width={420}
+              height={420}
+              alt="Logo Facebook"
+            />
+            <p className={styles.djSection_content_name}>Gildardo Gonzalez</p>
+            <p className={styles.djSection_content_title}>Studio 54</p>
+            <p className={styles.djSection_content_copy}>
+              Los programa más escuchados de la radio de habla hispana
+            </p>
           </div>
         </div>
-        <div className="row topTen">
-          <div className="col-12">
-            <h2>Soy TopTen</h2>
+        <div className="row">
+          <div className={`col-12 ${styles.sponsors_title}`}>
+            <h2>Patrocinadores</h2>
           </div>
+        </div>
+        <div className={`col-4`}>
+          <p>Patrocinador 1</p>
+        </div>
+        <div className={`col-4`}>
+          <p>Patrocinador 2</p>
+        </div>
+        <div className={`col-4`}>
+          <p>Patrocinador 3</p>
         </div>
       </div>
       <footer></footer>

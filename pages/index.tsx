@@ -63,8 +63,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.bg_header}>
-      <div className={`row ${styles.nav} d-flex align-items-baseline`}>
+      <div className={`row ${styles.bg_header} d-flex align-items-baseline`}>
+        <div className={`row ${styles.nav}`}>
         <div className="col-sm-1 col-xs-12">
           <Image src={logoKings} alt="Logo Kings Radio" />
         </div>
@@ -81,7 +81,7 @@ export default function Home() {
         </div>
       </div>
       <div className={`row ${styles.card_playList}`}>
-        <div className={`col-6 ${styles.broadcasterPic}`}>
+        <div className={`col-lg-6 col-md-12  ${styles.broadcasterPic}`}>
           <Image
             src={miyoReyes}
             width={350}
@@ -89,7 +89,7 @@ export default function Home() {
             alt="Foto de Locutor"
           />
         </div>
-        <div className={`col-6 ${styles.billboard}`}>
+        <div className={`col-lg-6 col-md-12 ${styles.billboard}`}>
           <p>Botones de Reproductor</p>
           <p className={styles.billboard_title}>
             Historias y Leyendas de México
@@ -183,7 +183,7 @@ export default function Home() {
             <h2>Los mejores DJs</h2>
             <h3>Las tornamesas más poderosas de la radio</h3>
           </div>
-          <div className={`col-6 ${styles.djSection_content}`}>
+          <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={mikeAguilar}
               width={420}
@@ -196,7 +196,7 @@ export default function Home() {
               Los programa más escuchados de la radio de habla hispana
             </p>
           </div>
-          <div className={`col-6 ${styles.djSection_content}`}>
+          <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={mikeAguilar}
               width={420}
@@ -215,7 +215,7 @@ export default function Home() {
             <h2>Patrocinadores</h2>
           </div>
        
-        <div className={`col-4 ${styles.sponsors_logo}`}>
+        <div className={`col-lg-4 col-md-12 ${styles.sponsors_logo}`}>
         <Image
               src={jaguares}
               width={220}
@@ -223,7 +223,7 @@ export default function Home() {
               alt="Logo Escuela de Tae Kwon Do Jaguares"
             />
         </div>
-        <div className={`col-4 ${styles.sponsors_logo}`}>
+        <div className={`col-lg-4 col-md-12 ${styles.sponsors_logo}`}>
         <Image
               src={tlalne}
               width={230}
@@ -231,7 +231,7 @@ export default function Home() {
               alt="Logo Facebook"
             />
         </div>
-        <div className={`col-4 ${styles.sponsors_logo}`}>
+        <div className={`col-lg-4 col-md-12 ${styles.sponsors_logo}`}>
         <Image
               src={carla }
               width={230}

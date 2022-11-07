@@ -18,6 +18,7 @@
 }
 
 .nav {
+  display: flex;
   font-weight: bold;
   padding: 1rem;
   text-align: center;
@@ -122,7 +123,6 @@
   margin-top: 0rem;
   margin-bottom: 4rem;
   text-align: center;
-
 }
 
 .programs_bg{
@@ -256,26 +256,118 @@
 
 
 
-
 @media screen and (max-width: 992px) {
 
-}  
+  .billboard_title {
+    font-size: 32px;
+  }
 
-@media screen and (max-width: 768px) {
+  .broadcasterPic img {
+    display: flex;
+    align-self: center;
+  }
+  .card_playList{
+    position: absolute;
+    width: 80%;
+    height: 800px;
+    left: 7rem;
+    top: 14rem;
+    background: #2D2C2C;
+    box-shadow: 0px 14px 22px rgba(0, 0, 0, 0.36);
+    border-radius: 38px;
+    color: aliceblue;
+  }
 
-  .nav a {
-    font-size: 12px;
+  .events_title {
+    text-align: center;
+    margin-top: 42rem;
+    margin-bottom: 2rem;
   }
 
 }
 
-@media screen and (max-width: 574px) {
+@media screen and (max-width: 768px) {
+
+  .nav a {
+    font-size: 16px;
+  }
+
   .fonts_nav {
     text-align: center;
+    margin-bottom: 1rem;
   }
+
+  .card_playList{
+    position: absolute;
+    width: 99%;
+    height: 620px;
+    left: 1.3rem;
+    top: 14rem;
+    background: #2D2C2C;
+    box-shadow: 0px 14px 22px rgba(0, 0, 0, 0.36);
+    border-radius: 38px;
+    color: aliceblue;
+  }
+  .broadcasterPic img {
+    display: flex;
+    align-self: center;
+  }
+
+  .events_title {
+    text-align: center;
+    margin-top: 32rem;
+    margin-bottom: 2rem;
+  }
+
+  .programs_cards {
+    box-shadow: 0px 14px 22px rgba(0, 0, 0, 0.36);
+    border-radius: 38px;
+    color: aliceblue;
+    margin: 2rem 3rem;
+    padding: 0rem;
+  }
+
+  .programs {
+    padding: 0;
+  }
+
   
+}
+
+@media screen and (max-width: 574px) {
+  .broadcasterPic img {
+    width: 88%;
+  }
+
+  .billboard_title{
+    font-size: 28px;
+  }
+
+  .billboard_broadcaster {
+    font-size: 19px;
+  }
+
+  .programs_cards {
+    box-shadow: 0px 14px 22px rgba(0, 0, 0, 0.36);
+    border-radius: 38px;
+    color: aliceblue;
+    margin: 2rem 1rem;
+    padding: 0rem;
+  }
 }  
 
 @media screen and (max-width: 375px) {
+  .events_title {
+    text-align: center;
+    margin-top: 30rem;
+    margin-bottom: 1rem;
+  }
 
+  .programs_cards {
+    box-shadow: 0px 14px 22px rgba(0, 0, 0, 0.36);
+    border-radius: 38px;
+    color: aliceblue;
+    margin: 2rem 0rem;
+    padding: 2rem;
+  }
 }  

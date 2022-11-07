@@ -4,39 +4,49 @@ import "bootstrap/dist/css/bootstrap.css";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import CardCarousel  from '../helpers/CardCarousel'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import CardCarousel from "../helpers/CardCarousel";
+import CardBroadCaster from "../helpers/CardBroadCaster";
 //images
 import logoKings from "../assets/logoKings.svg";
 import miyoReyes from "../assets/miyo.svg";
+import cory from "../assets/cory.svg";
+import tibu from "../assets/tibu.svg";
 import facebookLogo from "../assets/facebook.svg";
 //testing
-import tecate from '../assets/tecate.jpeg';
+import tecate from "../assets/tecate.jpeg";
 
 export default function Home() {
-
+  const pink = {
+    background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
+  };
+  const black = {
+    background: "linear-gradient(108.81deg, #6637EC -20.88%, #110338 121.48%)",
+  };
+  const purple = {
+    background: "linear-gradient(110.39deg, #3E0AD1 -0.21%, #3674DE 71.94%, #06E3D6 113.27%)",
+  };
 
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5
+      items: 5,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
+      items: 1,
+    },
   };
-
 
   return (
     <>
@@ -48,13 +58,13 @@ export default function Home() {
 
       <div className={`row ${styles.nav} d-flex align-items-baseline`}>
         <div className="col-sm-1 col-xs-12">
-        <Image src={logoKings} alt="Logo Kings Radio" />
+          <Image src={logoKings} alt="Logo Kings Radio" />
         </div>
         <div className={`col-sm-10 col-xs-12 ${styles.fonts_nav}`}>
           <Link href="/">Nosotros</Link>
           <Link href="/">Contacto</Link>
           <Link href="/">Ventas</Link>
-      </div>
+        </div>
       </div>
 
       <div className={`row ${styles.header}`}>
@@ -64,55 +74,101 @@ export default function Home() {
       </div>
       <div className={`row ${styles.card_playList}`}>
         <div className={`col-6 ${styles.broadcasterPic}`}>
-          <Image 
-          src={miyoReyes}
-          width={350}
-          height={350}
-          alt="Foto de Locutor" />
+          <Image
+            src={miyoReyes}
+            width={350}
+            height={350}
+            alt="Foto de Locutor"
+          />
         </div>
         <div className={`col-6 ${styles.billboard}`}>
           <p>Botones de Reproductor</p>
-          <p className={`${styles.billboard_title}`}>Historias y Leyendas de México</p>
-            <div className={`row ${styles.billboard_social}`}>
-              <div className="col-8">
-                <Image 
+          <p className={styles.billboard_title}>
+            Historias y Leyendas de México
+          </p>
+          <div className={`row ${styles.billboard_social}`}>
+            <div className="col-8">
+              <Image
                 src={facebookLogo}
                 width={40}
                 height={40}
-                alt="Logo Facebook" />
-                 <Image 
+                alt="Logo Facebook"
+              />
+              <Image
                 src={facebookLogo}
                 width={40}
                 height={40}
-                alt="Logo Facebook" />
-                 <Image 
+                alt="Logo Facebook"
+              />
+              <Image
                 src={facebookLogo}
                 width={40}
                 height={40}
-                alt="Logo Facebook" />
-              </div>
-            
+                alt="Logo Facebook"
+              />
             </div>
-          <p className={`${styles.billboard_broadcaster}`}>Con Miyo Reyes</p>
+          </div>
+          <p className={styles.billboard_broadcaster}>Con Miyo Reyes</p>
         </div>
       </div>
       <div className="row">
         <div className={`col-12 ${styles.events_title}`}>
           <h2>Eventos</h2>
         </div>
-        <div className={`col-12 ${styles.events_carousel}`} >
+        <div className={`col-12 ${styles.events_carousel}`}>
           <Carousel responsive={responsive}>
-            <div><CardCarousel eventPic={tecate} /></div>
-            <div><CardCarousel eventPic={tecate} /></div>
-            <div><CardCarousel eventPic={tecate} /></div>
-            <div><CardCarousel eventPic={tecate} /></div>
+            <div>
+              <CardCarousel eventPic={tecate} />
+            </div>
+            <div>
+              <CardCarousel eventPic={tecate} />
+            </div>
+            <div>
+              <CardCarousel eventPic={tecate} />
+            </div>
+            <div>
+              <CardCarousel eventPic={tecate} />
+            </div>
           </Carousel>
         </div>
       </div>
       <div className="row">
         <div className={`col-12 ${styles.programs}`}>
-          <h2>Soy Programas</h2>
+          <h2>Programas</h2>
+          <h3>Los programa más escuchados de la radio de habla hispana</h3>
         </div>
+        <div className={styles.programs_bg}>
+          <div className={styles.programs_section}>
+            <CardBroadCaster
+              broadcasterPic={cory}
+              title={"Fresas con chile"}
+              color={pink}
+              broadcaster={"con Cory Vicaña"}
+              copy={"Moda y Chismes de la Famososo"}
+              days={"Lunes y Martes"}
+              hours={"9:00am - 11:00am"}
+            />
+            <CardBroadCaster
+              broadcasterPic={miyoReyes}
+              title={"Historias y Leyendas de Mexico"}
+              color={black}
+              broadcaster={"con Miyo Reyes"}
+              copy={"Dos horas de terror y misterio"}
+              days={"Martes y Viernes"}
+              hours={"10:00am - 12:00am"}
+            />
+            <CardBroadCaster
+              broadcasterPic={tibu}
+              title={"Noche de Show"}
+              color={purple}
+              broadcaster={"con El Tibu"}
+              copy={"Noches divertidas y coquetas"}
+              days={"Jueves y Viernes"}
+              hours={"12:00pm - 15:00pm"}
+            />
+          </div>
+        </div>
+
         <div className="row dj">
           <div className="col-12"></div>
         </div>

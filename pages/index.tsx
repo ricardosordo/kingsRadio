@@ -15,6 +15,11 @@ import cory from "../assets/cory.svg";
 import tibu from "../assets/tibu.svg";
 import mikeAguilar from "../assets/mikeAguilar.svg";
 import facebookLogo from "../assets/facebook.svg";
+import jaguares from "../assets/jaguares.svg";
+import tlalne from "../assets/tlalne.svg";
+import carla from "../assets/carlaWedding.svg";
+import spotify from "../assets/spotify.svg";
+import tiktok from "../assets/tiktok.svg";
 //testing
 import tecate from "../assets/tecate.jpeg";
 
@@ -58,6 +63,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <div className={styles.bg_header}>
       <div className={`row ${styles.nav} d-flex align-items-baseline`}>
         <div className="col-sm-1 col-xs-12">
           <Image src={logoKings} alt="Logo Kings Radio" />
@@ -91,7 +97,7 @@ export default function Home() {
           <div className={`row ${styles.billboard_social}`}>
             <div className="col-8">
               <Image
-                src={facebookLogo}
+                src={spotify}
                 width={40}
                 height={40}
                 alt="Logo Facebook"
@@ -103,7 +109,7 @@ export default function Home() {
                 alt="Logo Facebook"
               />
               <Image
-                src={facebookLogo}
+                src={tiktok}
                 width={40}
                 height={40}
                 alt="Logo Facebook"
@@ -112,6 +118,7 @@ export default function Home() {
           </div>
           <p className={styles.billboard_broadcaster}>Con Miyo Reyes</p>
         </div>
+      </div>
       </div>
       <div className="row">
         <div className={`col-12 ${styles.events_title}`}>
@@ -203,22 +210,52 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="row">
+        <div className={`row ${styles.sponsors_content}`}>
           <div className={`col-12 ${styles.sponsors_title}`}>
             <h2>Patrocinadores</h2>
           </div>
+       
+        <div className={`col-4 ${styles.sponsors_logo}`}>
+        <Image
+              src={jaguares}
+              width={220}
+              height={220}
+              alt="Logo Escuela de Tae Kwon Do Jaguares"
+            />
         </div>
-        <div className={`col-4`}>
-          <p>Patrocinador 1</p>
+        <div className={`col-4 ${styles.sponsors_logo}`}>
+        <Image
+              src={tlalne}
+              width={230}
+              height={230}
+              alt="Logo Facebook"
+            />
         </div>
-        <div className={`col-4`}>
-          <p>Patrocinador 2</p>
+        <div className={`col-4 ${styles.sponsors_logo}`}>
+        <Image
+              src={carla }
+              width={230}
+              height={230}
+              alt="Logo Facebook"
+            />
         </div>
-        <div className={`col-4`}>
-          <p>Patrocinador 3</p>
         </div>
       </div>
-      <footer></footer>
+      <footer className="row">
+        <div className={styles.footer_content}>
+          <div className="col-12">
+          <ul>
+            <Link href="/">Inicio</Link>
+            <Link href="/">Nosotros</Link>
+            <Link href="/">Contacto</Link>
+            <Link href="/">Ventas</Link>
+          </ul>    
+          </div>
+          <div className={`${styles.footer_copyright}`}>
+            <p>Todos los derechos reservados Kings Radio Media 2022</p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

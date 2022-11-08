@@ -186,8 +186,6 @@ export default function Home() {
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={mikeAguilar}
-              width={420}
-              height={420}
               alt="Logo Facebook"
             />
             <p className={styles.djSection_content_name}>Mike Aguilar</p>
@@ -199,8 +197,6 @@ export default function Home() {
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={mikeAguilar}
-              width={420}
-              height={420}
               alt="Logo Facebook"
             />
             <p className={styles.djSection_content_name}>Gildardo Gonzalez</p>
@@ -218,25 +214,19 @@ export default function Home() {
         <div className={`col-lg-4 col-md-12 ${styles.sponsors_logo}`}>
         <Image
               src={jaguares}
-              width={220}
-              height={220}
               alt="Logo Escuela de Tae Kwon Do Jaguares"
             />
         </div>
         <div className={`col-lg-4 col-md-12 ${styles.sponsors_logo}`}>
         <Image
               src={tlalne}
-              width={230}
-              height={230}
-              alt="Logo Facebook"
+              alt="Municipio de Tlalnehuayocan"
             />
         </div>
         <div className={`col-lg-4 col-md-12 ${styles.sponsors_logo}`}>
         <Image
               src={carla }
-              width={230}
-              height={230}
-              alt="Logo Facebook"
+              alt="Carla Marquez Wedding Planner"
             />
         </div>
         </div>

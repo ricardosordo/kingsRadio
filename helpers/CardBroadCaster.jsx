@@ -8,8 +8,8 @@ const CardBroadCaster = ({ broadcasterPic, color, title, broadcaster, copy, days
      <div className={`col-lg-6 col-md-12 ${styles.programs_cards_img}`}>
             <Image 
             src={broadcasterPic}
-            width={250}
-            height={250}
+            width={200}
+            height={'auto'}
             className="card-img-top" alt="..." /> 
         </div> 
         <div className={`col-lg-6 col-md-12 ${styles.programs_cards_content}`}>

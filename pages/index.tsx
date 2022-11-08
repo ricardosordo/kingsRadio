@@ -14,6 +14,7 @@ import miyoReyes from "../assets/miyo.svg";
 import cory from "../assets/cory.svg";
 import tibu from "../assets/tibu.svg";
 import mikeAguilar from "../assets/mikeAguilar.svg";
+import gildardo from "../assets/gildardo.svg";
 import facebookLogo from "../assets/facebook.svg";
 import jaguares from "../assets/jaguares.svg";
 import tlalne from "../assets/tlalne.svg";
@@ -90,30 +91,36 @@ export default function Home() {
           />
         </div>
         <div className={`col-lg-6 col-md-12 ${styles.billboard}`}>
-          <p>Botones de Reproductor</p>
+        <iframe className={`${styles.billboard_player}`} src="https://servidorrprivado.com/mp3/kingsrad/?t=default"></iframe>
           <p className={styles.billboard_title}>
             Historias y Leyendas de México
           </p>
           <div className={`row ${styles.billboard_social}`}>
             <div className="col-8">
+              <Link href="https://open.spotify.com/show/4MuzSmGbyP6hBR6U6od2p4?si=E-ksvfz4RKi8Mv58fkAATQ">
               <Image
                 src={spotify}
                 width={40}
                 height={40}
-                alt="Logo Facebook"
+                alt="Spotify icon"
               />
+              </Link>
+              <Link href="https://www.facebook.com/miyoreyes16">
               <Image
                 src={facebookLogo}
                 width={40}
                 height={40}
-                alt="Logo Facebook"
+                alt="Facebook icon"
               />
+            </Link>
+            <Link href="https://www.tiktok.com/@miyoreyesoficial?fbclid=IwAR0gfQ4Vf5u0Osxs7c2r7hmWmO5pSUCuTypzPp_m8WcrHlNkMX_A5q3lOj4">
               <Image
                 src={tiktok}
                 width={40}
                 height={40}
                 alt="Logo Facebook"
               />
+            </Link>
             </div>
           </div>
           <p className={styles.billboard_broadcaster}>Con Miyo Reyes</p>
@@ -154,27 +161,27 @@ export default function Home() {
               title={"Fresas con chile"}
               color={pink}
               broadcaster={"con Cory Vicaña"}
-              copy={"Moda y Chismes de la Famososo"}
-              days={"Lunes y Martes"}
-              hours={"9:00am - 11:00am"}
+              copy={"Espectáculos, sociales y lo que ocurre en el mundo de la elite"}
+              days={"Viernes"}
+              hours={"5:50pm - 7:00pm"}
             />
             <CardBroadCaster
               broadcasterPic={miyoReyes}
               title={"Historias y Leyendas de Mexico"}
               color={black}
               broadcaster={"con Miyo Reyes"}
-              copy={"Dos horas de terror y misterio"}
-              days={"Martes y Viernes"}
-              hours={"10:00am - 12:00am"}
+              copy={"Para los amantes de los temas paranormales, misterios sin resolver, entidades, rituales"}
+              days={"Miércoles y Viernes"}
+              hours={"9:00pm - 11:00pm"}
             />
             <CardBroadCaster
               broadcasterPic={tibu}
               title={"Noche de Show"}
               color={purple}
               broadcaster={"con El Tibu"}
-              copy={"Noches divertidas y coquetas"}
-              days={"Jueves y Viernes"}
-              hours={"12:00pm - 15:00pm"}
+              copy={"Humor Jarocho, Cine, Horoscopos y sesiones deportivas con invitados los martes"}
+              days={"Jueves"}
+              hours={"9:00pm - 12:00pm"}
             />
           </div>
         </div>
@@ -196,8 +203,9 @@ export default function Home() {
           </div>
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
-              src={mikeAguilar}
+              src={gildardo}
               alt="Logo Facebook"
+              style={{'marginBottom': '2rem'}}
             />
             <p className={styles.djSection_content_name}>Gildardo Gonzalez</p>
             <p className={styles.djSection_content_title}>Studio 54</p>

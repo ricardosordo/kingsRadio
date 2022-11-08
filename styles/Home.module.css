@@ -70,9 +70,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  
+  text-align: center; 
 }
+
+.billboard_player {
+  display: flex;
+  align-self: center;
+  width: 90px;
+  height: 5rem;
+  border-radius: 20px;
+}
+
 
 .billboard_title {
   font-size: 32px;

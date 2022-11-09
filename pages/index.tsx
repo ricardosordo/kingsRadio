@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 // add bootstrap css
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,6 +9,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CardCarousel from "../helpers/CardCarousel";
 import CardBroadCaster from "../helpers/CardBroadCaster";
+import { dataFromSource } from '../pages/api/Api'
+
 //images
 import logoKings from "../assets/logoKings.svg";
 import miyoReyes from "../assets/miyo.svg";
@@ -24,7 +27,12 @@ import tiktok from "../assets/tiktok.svg";
 //testing
 import tecate from "../assets/tecate.jpeg";
 
+
+
 export default function Home() {
+
+  const [data, setData] = useState('');
+
   const pink = {
     background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
   };
@@ -56,6 +64,25 @@ export default function Home() {
     },
   };
 
+
+  const handlerImage = async () => {
+    try {
+      const response = await dataFromSource();
+      if(response){
+        setData(response);
+      }
+    } catch (error) {
+      return error
+    }
+  }
+
+
+  useEffect(() => {
+    handlerImage();
+  }, [])
+
+  console.log(data)
+  
   return (
     <>
       <Head>

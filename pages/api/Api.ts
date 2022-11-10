@@ -9,7 +9,7 @@ const instance = axios.create({
 
 const dataFromSource = async () => {
     try {
-      const response = await instance.get(BASE_URL);
+      const response: any = await instance.get(BASE_URL);
       return response
     } catch (error) {
       return console.log(error)

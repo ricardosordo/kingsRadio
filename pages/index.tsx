@@ -31,8 +31,10 @@ import tecate from "../assets/tecate.jpeg";
 
 export default function Home() {
 
-  const [data, setData] = useState('');
-
+  const [data, setData] = useState<{data: object}>({
+    data: {},
+  })
+ 
   const pink = {
     background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
   };
@@ -81,7 +83,6 @@ export default function Home() {
     handlerImage();
   }, [])
 
-  console.log(data)
   
   return (
     <>
@@ -110,12 +111,14 @@ export default function Home() {
       </div>
       <div className={`row ${styles.card_playList}`}>
         <div className={`col-lg-6 col-md-12  ${styles.broadcasterPic}`}>
+          { data.data.djusername === "MIYOREYES" &&
           <Image
             src={miyoReyes}
             width={350}
             height={350}
             alt="Foto de Locutor"
           />
+          }
         </div>
         <div className={`col-lg-6 col-md-12 ${styles.billboard}`}>
         <iframe className={`${styles.billboard_player}`} src="https://servidorrprivado.com/mp3/kingsrad/?t=default"></iframe>

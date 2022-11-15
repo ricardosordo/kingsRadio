@@ -24,16 +24,35 @@ import tlalne from "../assets/tlalne.svg";
 import carla from "../assets/carlaWedding.svg";
 import spotify from "../assets/spotify.svg";
 import tiktok from "../assets/tiktok.svg";
+import daft from "../assets/daft.svg";
 //testing
 import tecate from "../assets/tecate.jpeg";
 
 
+type DjImage = {
+  art: string,
+  bitrate:string,
+  djprofile: string,
+  djusername: string,
+  listeners: string,
+  title: string,
+  ulisteners: string,
+}
+
 
 export default function Home() {
 
-  const [data, setData] = useState<{data: object}>({
-    data: {},
-  })
+  const [data, setData] = useState<DjImage>({
+    art: '',
+    bitrate:'',
+    djprofile: '',
+    djusername: '',
+    listeners: '',
+    title: '',
+    ulisteners: '',
+  });
+
+  
  
   const pink = {
     background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
@@ -83,6 +102,7 @@ export default function Home() {
     handlerImage();
   }, [])
 
+  console.log(data.djusername);
   
   return (
     <>
@@ -111,20 +131,68 @@ export default function Home() {
       </div>
       <div className={`row ${styles.card_playList}`}>
         <div className={`col-lg-6 col-md-12  ${styles.broadcasterPic}`}>
-          { data.data.djusername === "MIYOREYES" &&
+          { data.djusername === "MIYOREYES" ?
           <Image
             src={miyoReyes}
             width={350}
             height={350}
             alt="Foto de Locutor"
           />
-          }
+         : data.djusername === "TIBU" ?
+            <Image
+            src={tibu}
+            width={350}
+            height={350}
+            alt="Foto de Locutor"
+          />
+        : data.djusername === "MIGUELAGUILERA" ?
+            <Image
+            src={mikeAguilar}
+            width={350}
+            height={350}
+            alt="Foto de Locutor"
+          />
+          : data.djusername === "GILDARDOGONZALEZ" ?
+            <Image
+            src={gildardo}
+            width={350}
+            height={350}
+            alt="Foto de Locutor"
+          />  
+          :
+          <Image
+          src={daft}
+          width={350}
+          height={350}
+          alt="Foto de Locutor"
+        />
+        }
         </div>
         <div className={`col-lg-6 col-md-12 ${styles.billboard}`}>
         <iframe className={`${styles.billboard_player}`} src="https://servidorrprivado.com/mp3/kingsrad/?t=default"></iframe>
+        
+        
+        { data.djusername === "MIYOREYES" ?
           <p className={styles.billboard_title}>
             Historias y Leyendas de México
           </p>
+          : data.djusername === "TIBU" ?
+          <p className={styles.billboard_title}>
+            Noches de Show
+          </p>
+           : data.djusername === "MIGUELAGUILERA" ?
+           <p className={styles.billboard_title}>
+             Factor Cumbia
+           </p>
+            : data.djusername === "GILDARDOGONZALEZ" ?
+            <p className={styles.billboard_title}>
+              Studio 54
+            </p>
+             :
+            <p className={styles.billboard_title}>
+              Lo que quieres escuchar
+            </p>
+          } 
           <div className={`row ${styles.billboard_social}`}>
             <div className="col-8">
               <Link href="https://open.spotify.com/show/4MuzSmGbyP6hBR6U6od2p4?si=E-ksvfz4RKi8Mv58fkAATQ">
@@ -153,7 +221,27 @@ export default function Home() {
             </Link>
             </div>
           </div>
-          <p className={styles.billboard_broadcaster}>Con Miyo Reyes</p>
+          { data.djusername === "MIYOREYES" ?
+          <p className={styles.billboard_broadcaster}>
+            Con Miyo Reyes
+          </p>
+          : data.djusername === "TIBU" ?
+          <p className={styles.billboard_broadcaster}>
+            Con El Tibu
+          </p>
+           : data.djusername === "MIGUELAGUILERA" ?
+           <p className={styles.billboard_broadcaster}>
+             Con DJ Mike Aguilera
+           </p>
+            : data.djusername === "GILDARDOGONZALEZ" ?
+            <p className={styles.billboard_broadcaster}>
+                Con DJ Gildardo González
+            </p>
+             :
+            <p className={styles.billboard_broadcaster}>
+              Programación Diaria
+            </p>
+          } 
         </div>
       </div>
       </div>
@@ -237,7 +325,7 @@ export default function Home() {
               alt="Logo Facebook"
               style={{'marginBottom': '2rem'}}
             />
-            <p className={styles.djSection_content_name}>Gildardo Gonzalez</p>
+            <p className={styles.djSection_content_name}>Gildardo González</p>
             <p className={styles.djSection_content_title}>Studio 54</p>
             <p className={styles.djSection_content_copy}>
               Los programa más escuchados de la radio de habla hispana

@@ -10,7 +10,7 @@ const instance = axios.create({
 const dataFromSource = async () => {
     try {
       const response: any = await instance.get(BASE_URL);
-      return response
+      return response.data
     } catch (error) {
       return console.log(error)
     }

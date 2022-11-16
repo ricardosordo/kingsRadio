@@ -123,7 +123,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://drive.google.com/file/d/11yJM4KahbfVHqksgt30vpuQNI5VErKcj/view?usp=share_link"
+          content="https://lh6.googleusercontent.com/OdbIw1eUpYPCKwwg_4y99j8E8-eSGIVx1LAnMZQ9RZzK01y9YK8dK5lwysuAQ3hBbTw=w2400"
         />
         {/* <meta property="og:title" content="Kings Radio FM"></meta>
         <meta property="og:site_name" content="Kings Radio FM"></meta>

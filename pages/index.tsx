@@ -10,7 +10,6 @@ import "react-multi-carousel/lib/styles.css";
 import CardCarousel from "../helpers/CardCarousel";
 import CardBroadCaster from "../helpers/CardBroadCaster";
 import { dataFromSource } from '../pages/api/Api'
-
 //images
 import logoKings from "../assets/logoKings.svg";
 import miyoReyes from "../assets/miyo.svg";
@@ -26,10 +25,13 @@ import carla from "../assets/carlaWedding.svg";
 import spotify from "../assets/spotify.svg";
 import tiktok from "../assets/tiktok.svg";
 import daft from "../assets/daft.svg";
+//icons
+import whatsapp from "../assets/whatsapp.svg"
 //events
 import rocky from "../assets/rocky.svg";
 import festival from "../assets/festivalXalapa.svg";
 import fortaleza from "../assets/fortaleza.svg"
+
 
 type DjImage = {
   art: string,
@@ -356,24 +358,31 @@ export default function Home() {
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={mikeAguilar}
-              alt="Mike Aguilar"
+              alt="Logo Facebook"
             />
             <p className={styles.djSection_content_name}>Mike Aguilar</p>
             <p className={styles.djSection_content_title}>Factor Cumbia</p>
             <p className={styles.djSection_content_copy}>
-              Los programa más escuchados de la radio de habla hispana
+              Sintoniza los ritmos más movidos desde el corazón de la cumbia latina.
             </p>
           </div>
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={gildardo}
-              alt="Gildardo Gonzalez"
-              className={styles.djSection_image_responsive}
+              alt="Logo Facebook"
+              style={{'marginBottom': '2rem'}}
             />
-            <p className={styles.djSection_content_name}>Gildardo González</p>
+            <p className={styles.djSection_content_name}>DJ Gildardo González</p>
             <p className={styles.djSection_content_title}>Studio 54</p>
             <p className={styles.djSection_content_copy}>
-              Los programa más escuchados de la radio de habla hispana
+              Miércoles de 7:00 a 9:00 pm
+            </p>
+            <p className={styles.djSection_content_title}>Viernes Loko</p>
+            <p className={styles.djSection_content_copy}>
+              Viernes de 7:00 a 9:00 pm
+            </p>
+            <p className={styles.djSection_content_copy}>
+            Enciende la pista de baile donde te encuentres.
             </p>
           </div>
         </div>
@@ -396,12 +405,22 @@ export default function Home() {
         </div>
         <div className={`col-lg-4 col-md-12 ${styles.sponsors_logo}`}>
         <Image
-              src={carla }
+              src={carla}
               alt="Carla Marquez Wedding Planner"
             />
         </div>
         </div>
       </div>
+
+      <Link href="https://wa.link/h6n29v"  className={`${styles.whatsapp}`} 
+      target="_blank" >
+      <Image 
+      height={36}
+      width={36}
+      style={{'marginTop': '7px'}}
+      src={whatsapp} alt="logo whatsapp" />
+      </Link>
+            
       <footer className="row">
         <div className={styles.footer_content}>
           <div className="col-12">

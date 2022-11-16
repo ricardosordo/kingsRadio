@@ -117,7 +117,7 @@ export default function Home() {
         <meta property="og:title" content="Kings Radio FM"/>
         {/* <meta property="og:type" content="website"/> */}
         <meta property="og:url" content="https://kingsradiofm.com/"/>
-        <meta property="og:image" content="https://drive.google.com/file/d/11yJM4KahbfVHqksgt30vpuQNI5VErKcj/view?usp=share_link"/>
+        {/* <meta property="og:image" content="https://drive.google.com/file/d/11yJM4KahbfVHqksgt30vpuQNI5VErKcj/view?usp=share_link"/> */}
         <meta property="og:description"
           content="El espacio impactante de la radio digital para México y Latinoamérica."/>
       </Head>

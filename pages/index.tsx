@@ -73,7 +73,6 @@ export default function Home() {
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -117,8 +116,11 @@ export default function Home() {
 
       <div className={`row ${styles.bg_header} d-flex align-items-baseline`}>
         <div className={`row ${styles.nav}`}>
-        <div className="col-sm-1 col-xs-12">
-          <Image src={logoKings} alt="Logo Kings Radio" />
+        <div className={`col-sm-1 col-xs-12`}>
+          <Image 
+          src={logoKings} 
+          alt="Logo Kings Radio" 
+          />
         </div>
         <div className={`col-sm-10 col-xs-12 ${styles.fonts_nav}`}>
           <Link href="/">Nosotros</Link>
@@ -271,9 +273,8 @@ export default function Home() {
         <div className={`col-12 ${styles.events_carousel}`}>
           <Carousel 
           arrows={false} 
-          showDots={true} 
-          autoPlay={true}
-          rewind 
+          showDots={true}
+          swipeable={true}
           responsive={responsive}>
             <div>
               <CardCarousel 
@@ -323,7 +324,7 @@ export default function Home() {
               title={"Crónicas Deportivas"}
               color={orange}
               broadcaster={"con El Mayor"}
-              copy={"Noticias del deporte alrededor del mundo con la mejor narrativa."}
+              copy={"Noticias de deportes alrededor del mundo con la mejor narrativa."}
               days={"Martes y Viernes"}
               hours={"9:00pm - 10:00pm"}
             />
@@ -332,7 +333,7 @@ export default function Home() {
               title={"Historias y Leyendas de Mexico"}
               color={black}
               broadcaster={"con Miyo Reyes"}
-              copy={"Para los amantes de los temas paranormales, misterios sin resolver, entidadesy rituales."}
+              copy={"Para los amantes de los temas paranormales, misterios sin resolver, entidades y rituales."}
               days={"Miércoles y Viernes"}
               hours={"9:00pm - 11:00pm"}
             />
@@ -341,7 +342,7 @@ export default function Home() {
               title={"Noche de Show"}
               color={purple}
               broadcaster={"con El Tibu"}
-              copy={"Humor Jarocho, Cine, Horoscopos y sesiones deportivas con invitados los martes."}
+              copy={"Humor jarocho, Cine, Horoscopos y sesiones deportivas con invitados los martes."}
               days={"Jueves"}
               hours={"9:00pm - 12:00pm"}
             />
@@ -355,7 +356,7 @@ export default function Home() {
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={mikeAguilar}
-              alt="Logo Facebook"
+              alt="Mike Aguilar"
             />
             <p className={styles.djSection_content_name}>Mike Aguilar</p>
             <p className={styles.djSection_content_title}>Factor Cumbia</p>
@@ -366,8 +367,8 @@ export default function Home() {
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={gildardo}
-              alt="Logo Facebook"
-              style={{'marginBottom': '2rem'}}
+              alt="Gildardo Gonzalez"
+              className={styles.djSection_image_responsive}
             />
             <p className={styles.djSection_content_name}>Gildardo González</p>
             <p className={styles.djSection_content_title}>Studio 54</p>
@@ -412,7 +413,7 @@ export default function Home() {
           </ul>    
           </div>
           <div className={`${styles.footer_copyright}`}>
-            <p>Todos los derechos reservados Kings Radio Media 2022</p>
+            <p>Todos los derechos reservados Kings Radio FM 2022</p>
           </div>
         </div>
       </footer>

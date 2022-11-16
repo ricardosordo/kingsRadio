@@ -15,6 +15,7 @@ import { dataFromSource } from '../pages/api/Api'
 import logoKings from "../assets/logoKings.svg";
 import miyoReyes from "../assets/miyo.svg";
 import cory from "../assets/cory.svg";
+import mayor from "../assets/mayor.svg";
 import tibu from "../assets/tibu.svg";
 import mikeAguilar from "../assets/mikeAguilar.svg";
 import gildardo from "../assets/gildardo.svg";
@@ -25,9 +26,10 @@ import carla from "../assets/carlaWedding.svg";
 import spotify from "../assets/spotify.svg";
 import tiktok from "../assets/tiktok.svg";
 import daft from "../assets/daft.svg";
-//testing
-import tecate from "../assets/tecate.jpeg";
-
+//events
+import rocky from "../assets/rocky.svg";
+import festival from "../assets/festivalXalapa.svg";
+import fortaleza from "../assets/fortaleza.svg"
 
 type DjImage = {
   art: string,
@@ -64,6 +66,10 @@ export default function Home() {
     background:
       "linear-gradient(110.39deg, #3E0AD1 -0.21%, #3674DE 71.94%, #06E3D6 113.27%)",
   };
+  const orange = {
+    background:
+      "linear-gradient(109.01deg, #F3C110 -11.01%, #D36528 62.56%, #580808 112.74%)",
+  };
 
   const responsive = {
     superLargeDesktop: {
@@ -97,12 +103,9 @@ export default function Home() {
     }
   }
 
-
   useEffect(() => {
     handlerImage();
   }, [])
-
-  console.log(data.djusername);
   
   return (
     <>
@@ -145,6 +148,13 @@ export default function Home() {
             height={350}
             alt="Foto de Locutor"
           />
+          : data.djusername === "MAYOR" ?
+          <Image
+          src={mayor}
+          width={350}
+          height={350}
+          alt="Foto de Locutor"
+        /> 
         : data.djusername === "MIGUELAGUILERA" ?
             <Image
             src={mikeAguilar}
@@ -179,6 +189,10 @@ export default function Home() {
           : data.djusername === "TIBU" ?
           <p className={styles.billboard_title}>
             Noches de Show
+          </p>
+          : data.djusername === "MAYOR" ?
+          <p className={styles.billboard_title}>
+            Crónicas Deportivas
           </p>
            : data.djusername === "MIGUELAGUILERA" ?
            <p className={styles.billboard_title}>
@@ -229,6 +243,10 @@ export default function Home() {
           <p className={styles.billboard_broadcaster}>
             Con El Tibu
           </p>
+           : data.djusername === "MAYOR" ?
+           <p className={styles.billboard_broadcaster}>
+             Con El Mayor
+           </p>
            : data.djusername === "MIGUELAGUILERA" ?
            <p className={styles.billboard_broadcaster}>
              Con DJ Mike Aguilera
@@ -251,18 +269,35 @@ export default function Home() {
           <h3>Experiencias que recomendamos no perderte</h3>
         </div>
         <div className={`col-12 ${styles.events_carousel}`}>
-          <Carousel responsive={responsive}>
+          <Carousel 
+          arrows={false} 
+          showDots={true} 
+          autoPlay={true}
+          rewind 
+          responsive={responsive}>
             <div>
-              <CardCarousel eventPic={tecate} />
+              <CardCarousel 
+              title={'Festival Internacional Xalapa y su Cultura'} 
+              descripion={'Expositores de productos locales'} 
+              date={'Del 25 al 27 de noviembre, Parque Juaréz'}
+              link={'https://egobierno.xalapa.gob.mx/festival_cultura/'} 
+              eventPic={festival} />
             </div>
             <div>
-              <CardCarousel eventPic={tecate} />
+            <CardCarousel 
+              title={'Transilvanos en Xalapa 4'} 
+              descripion={'Función interactiva de la película The Rocky Horror Picture Show.'} 
+              date={'Sábado 19 de noviembre de 2022 a las 20:00 hrs'}
+              link={'https://www.facebook.com/butacafantastica'} 
+              eventPic={rocky} />
             </div>
             <div>
-              <CardCarousel eventPic={tecate} />
-            </div>
-            <div>
-              <CardCarousel eventPic={tecate} />
+            <CardCarousel 
+              title={'Visita nocturna Fortaleza de San Carlos'} 
+              descripion={'Un nuevo scouting se aproxima en un lugar lleno de misterio e historia'} 
+              date={'Proximamente'}
+              link={''} 
+              eventPic={fortaleza} />
             </div>
           </Carousel>
         </div>
@@ -278,17 +313,26 @@ export default function Home() {
               broadcasterPic={cory}
               title={"Fresas con chile"}
               color={pink}
-              broadcaster={"con Cory Vicaña"}
-              copy={"Espectáculos, sociales y lo que ocurre en el mundo de la elite"}
+              broadcaster={"con Cory Villicaña"}
+              copy={"Espectáculos, sociales y lo que ocurre en el mundo de la élite."}
               days={"Viernes"}
               hours={"5:50pm - 7:00pm"}
+            />
+              <CardBroadCaster
+              broadcasterPic={mayor}
+              title={"Crónicas Deportivas"}
+              color={orange}
+              broadcaster={"con El Mayor"}
+              copy={"Noticias del deporte alrededor del mundo con la mejor narrativa."}
+              days={"Martes y Viernes"}
+              hours={"9:00pm - 10:00pm"}
             />
             <CardBroadCaster
               broadcasterPic={miyoReyes}
               title={"Historias y Leyendas de Mexico"}
               color={black}
               broadcaster={"con Miyo Reyes"}
-              copy={"Para los amantes de los temas paranormales, misterios sin resolver, entidades, rituales"}
+              copy={"Para los amantes de los temas paranormales, misterios sin resolver, entidadesy rituales."}
               days={"Miércoles y Viernes"}
               hours={"9:00pm - 11:00pm"}
             />
@@ -297,7 +341,7 @@ export default function Home() {
               title={"Noche de Show"}
               color={purple}
               broadcaster={"con El Tibu"}
-              copy={"Humor Jarocho, Cine, Horoscopos y sesiones deportivas con invitados los martes"}
+              copy={"Humor Jarocho, Cine, Horoscopos y sesiones deportivas con invitados los martes."}
               days={"Jueves"}
               hours={"9:00pm - 12:00pm"}
             />

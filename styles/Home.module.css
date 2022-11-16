@@ -66,6 +66,11 @@
   justify-content: center;
 }
 
+.broadcasterPic img {
+   align-self: flex-end;
+}
+
+
 .billboard {
   display: flex;
   flex-direction: column;
@@ -83,6 +88,7 @@
 
 
 .billboard_title {
+  margin-top: 20px;
   font-size: 32px;
 }
 
@@ -107,7 +113,7 @@
 }
 
 .events_carousel {
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
   text-align: center;
 }
 
@@ -116,7 +122,8 @@
   border: none;
   background-color: #F8F8F8;
   box-shadow: 5px 8px 11px 1px rgba(77, 75, 75, 0.14);
-  margin-bottom: 4rem;
+  margin: 3rem 0rem;
+  width: 18rem;
 }
 
 .events_cards img {
@@ -128,7 +135,7 @@
 }
 
 .programs {
-  margin-top: 0rem;
+  margin-top: 4rem;
   margin-bottom: 4rem;
   text-align: center;
 }
@@ -335,11 +342,12 @@
     text-align: center;
     margin-bottom: 1rem;
   }
+  
 
   .card_playList{
     position: absolute;
     width: 99%;
-    height: 620px;
+    height: 690px;
     left: 1.3rem;
     top: 14rem;
     background: #2D2C2C;
@@ -347,6 +355,13 @@
     border-radius: 38px;
     color: aliceblue;
   }
+
+  .broadcasterPic img {
+    display: flex;
+    align-self: center;
+  }
+
+
   .broadcasterPic img {
     display: flex;
     align-self: center;
@@ -397,10 +412,12 @@
   .billboard_broadcaster {
     font-size: 19px;
   }
+  
 
   .programs{
     padding: 1rem;
   }
+  
 
   .programs_cards {
     box-shadow: 0px 14px 22px rgba(0, 0, 0, 0.36);
@@ -432,11 +449,28 @@
 }  
 
 @media screen and (max-width: 375px) {
+
+  .card_playList{
+    height: 680px;
+  }
+
+  .broadcasterPic  {
+    position: relative;
+    top: 7rem;
+    height: 9rem;
+  }
+
+
   .events_title {
     text-align: center;
     margin-top: 30rem;
     margin-bottom: 1rem;
   }
+
+  .events_cards {
+    width: 17rem;
+  }
+  
 
   .programs_bg {
     padding-left: 12px;

@@ -199,8 +199,7 @@ export default function Home() {
         </div>
         <div className={`col-lg-6 col-md-12 ${styles.billboard}`}>
         <iframe className={`${styles.billboard_player}`} src="https://servidorrprivado.com/mp3/kingsrad/?t=default"></iframe>
-        
-        
+
         { data.djusername === "MIYOREYES" ?
           <p className={styles.billboard_title}>
             Historias, Leyendas de México y el Mundo

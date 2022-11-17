@@ -122,13 +122,13 @@ export default function Home() {
         <meta property="og:url" content="https://kingsradiofm.com/" />
         <meta property="og:title" content="Kings Radio - Lo que quieres escuchar" />
         <meta property="og:description" content="La radio impactante con el mejor entretenimiento para México y Latinoamérica." />
-        <meta property="og:image" content="/kingsOg.svg" />
+        <meta property="og:image" content="/kingshare.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://kingsradiofm.com/" />
         <meta property="twitter:title" content="Kings Radio - Lo que quieres escuchar" />
         <meta property="twitter:description" content="La radio impactante con el mejor entretenimiento para México y Latinoamérica." />
-        <meta property="twitter:image" content="/kingsOg.svg" />
+        <meta property="twitter:image" content="/kingshare.png" />
       </Head>
 
       <div className={`row ${styles.bg_header} d-flex align-items-baseline`}>

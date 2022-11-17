@@ -123,7 +123,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.es%2Fpsd-gratis%2Ficono-radio-portatil-renderizado-3d_29110366.htm&psig=AOvVaw23i-hQEUPyLXEyKe9X58QT&ust=1668729530991000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLiMwYn0s_sCFQAAAAAdAAAAABAE"
+          content='../assets/kingsOgImage.jpg'
         />
         {/* <meta property="og:title" content="Kings Radio FM"></meta>
         <meta property="og:site_name" content="Kings Radio FM"></meta>

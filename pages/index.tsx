@@ -341,8 +341,8 @@ export default function Home() {
               color={orange}
               broadcaster={"con El Mayor"}
               copy={"Noticias de deportes alrededor del mundo con la mejor narrativa."}
-              days={"Martes y Viernes"}
-              hours={"9:00pm - 10:00pm"}
+              days={"Martes a Viernes"}
+              hours={"9:00am - 10:15am"}
             />
             <CardBroadCaster
               broadcasterPic={miyoReyes}
@@ -359,7 +359,7 @@ export default function Home() {
               color={purple}
               broadcaster={"con El Tibu"}
               copy={"Humor jarocho, Cine, Horoscopos y sesiones deportivas con invitados los martes."}
-              days={"Jueves"}
+              days={"Martes y Jueves"}
               hours={"9:00pm - 12:00pm"}
             />
           </div>

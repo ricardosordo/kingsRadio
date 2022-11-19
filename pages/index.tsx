@@ -372,21 +372,19 @@ export default function Home() {
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={mikeAguilar}
-              alt="Logo Facebook"
+              alt="Mike Aguilar Dj"
             />
             <p className={styles.djSection_content_name}>Mike Aguilar</p>
             <p className={styles.djSection_content_title}>Factor Cumbia</p>
             <p className={styles.djSection_content_copy}>
-              Lunes y Miércoles de 5:00 a 7:00 pm
-            </p>
-            <p className={styles.djSection_content_copy}>
+              Lunes y Miércoles de 5:00 a 7:00 pm <br /><br />
               Sintoniza los ritmos más movidos desde el corazón de la cumbia latina.
             </p>
           </div>
           <div className={`col-lg-6 col-md-12 ${styles.djSection_content}`}>
             <Image
               src={gildardo}
-              alt="Logo Facebook"
+              alt="Dj Gildardo"
               style={{'marginBottom': '2rem'}}
             />
             <p className={styles.djSection_content_name}>DJ Gildardo González</p>
@@ -396,10 +394,8 @@ export default function Home() {
             </p>
             <p className={styles.djSection_content_title}>Viernes Loko</p>
             <p className={styles.djSection_content_copy}>
-              Viernes de 7:00 a 9:00 pm
-            </p>
-            <p className={styles.djSection_content_copy}>
-            Enciende la pista de baile donde te encuentres.
+              Viernes de 7:00 a 9:00 pm <br /><br />
+              Enciende la pista de baile donde te encuentres.
             </p>
           </div>
         </div>
@@ -434,7 +430,7 @@ export default function Home() {
       <Image 
       height={36}
       width={36}
-      style={{'marginTop': '7px'}}
+      style={{'marginTop': '7.5px', 'marginLeft': '1.5px'}}
       src={whatsapp} alt="logo whatsapp" />
       </Link>
             

@@ -235,7 +235,7 @@ export default function Home() {
                 alt="Spotify icon"
               />
               </Link>
-              <Link href="https://www.facebook.com/miyoreyes16">
+              <Link href="https://www.facebook.com/FMKingsRadio">
               <Image
                 src={facebookLogo}
                 width={40}
@@ -374,7 +374,7 @@ export default function Home() {
               src={mikeAguilar}
               alt="Logo Facebook"
             />
-            <p className={styles.djSection_content_name}>Mike Aguilar</p>
+            <p className={styles.djSection_content_name}>Mike Aguilera</p>
             <p className={styles.djSection_content_title}>Factor Cumbia</p>
             <p className={styles.djSection_content_copy}>
               Lunes y Miércoles de 5:00 a 7:00 pm

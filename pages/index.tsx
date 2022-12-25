@@ -9,7 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CardCarousel from "../helpers/CardCarousel";
 import CardBroadCaster from "../helpers/CardBroadCaster";
-import { dataFromSource } from "../pages/api/Api";
+import { dataFromSource, dataFromSpotify } from "../pages/api/Api";
 //images
 import logoKings from "../assets/logoKings.svg";
 import miyoReyes from "../assets/miyo.svg";
@@ -43,6 +43,19 @@ type DjImage = {
   ulisteners: string;
 };
 
+type TracksInfo = {
+  description: string,
+  name: string,
+  tracks: {
+    items: {
+      track: {
+        name: string,
+        artist: string[]
+      }
+    }
+  },
+};
+
 export default function Home() {
   const [data, setData] = useState<DjImage>({
     art: "",
@@ -53,6 +66,14 @@ export default function Home() {
     title: "",
     ulisteners: "",
   });
+
+  const [spotifyData, setSpotifyData] = useState<TracksInfo>({
+    description: "",
+    name: "",
+    tracks: {
+      items: []
+    },
+    })
 
   const pink = {
     background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
@@ -92,6 +113,12 @@ export default function Home() {
     },
   };
 
+
+  useEffect(() => {
+    handlerImage();
+    handlerSpotifyList();
+  }, []);
+
   const handlerImage = async () => {
     try {
       const response = await dataFromSource();
@@ -103,9 +130,19 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    handlerImage();
-  }, []);
+
+   const handlerSpotifyList = async () => {
+    try {
+      const response = await dataFromSpotify();
+      if (response) {
+        setSpotifyData(response);
+      }
+    } catch (error) {
+      return error;
+    }
+  };
+
+  console.log(spotifyData)
 
   return (
     <>
@@ -463,6 +500,34 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="row">
+      <div className={`col-12 ${styles.spotify_title}`}>
+            <h2>Spotify {spotifyData.name}</h2>
+            <h3>{spotifyData.description}</h3>
+          </div>
+      </div>
+      <div className={`col-12 ${styles.spotify_content}`}>
+      <table className="table">
+  <thead>
+    <tr>
+      <th scope="col">Top</th>
+      <th scope="col">Título</th>
+      <th scope="col">Artista</th>
+    </tr>
+  </thead>
+  { spotifyData.tracks.items.map((value, index) => {
+    return (
+  <tbody key={index}>
+    <tr>
+      <th scope="row">{index + 1}</th>
+      <td>{value.track.name}</td>
+      <td>{value.track.artists[0]?.name} {value.track?.artists[1]?.name} {value.track?.artists[2]?.name}</td>
+    </tr>
+    </tbody>
+    );
+     })}
+    </table>
       </div>
       <Link
         href="https://wa.link/h6n29v"

@@ -23,7 +23,7 @@ const dataFromSpotify = async () => {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: "Bearer BQDik5U4gy6PoWaYhvZ7cOMFDp-qkAZCorR6utTdyxprkDtHIAgWleRtk-IBCP47KoyRYD1ajZn3298YUJd1ucj1xp_AsuowniAc6stAGAqKIdLb4uMgGpYCQCXN077HOOdp6YiTQocKCi9MXnDXqAv3IQSNBnC--AWVNasCBeYAxaY",
+          Authorization: "Bearer BQDH7sCs2v5Mx7MFNXW_IL_DOn2-2gU-j6VKo0Z1LUvD9Rp54E9GsJzU8dmmCurXkHB786uDFsCrnlBbaVwoAKzJqM8Xl3_psr6QNSUWoUac6JSzzgbmvPPmjY7i1vABTdMprHqiN-g8ZJyp8gDpnksIDhPKyxH8VcT45CJz_qyoFvQ",
         },
       }
       );

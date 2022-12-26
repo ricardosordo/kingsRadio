@@ -43,15 +43,12 @@ type DjImage = {
   ulisteners: string;
 };
 
-type TracksInfo = {
+interface TracksInfo {
   description: string,
   name: string,
   tracks: {
     items: {
-      track: {
-        name: string,
-        artist: string[]
-      }
+      track: string[]
     }
   },
 };
@@ -74,6 +71,7 @@ export default function Home() {
       items: []
     },
     })
+  
 
   const pink = {
     background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
@@ -516,7 +514,8 @@ export default function Home() {
       <th scope="col">Artista</th>
     </tr>
   </thead>
-  { spotifyData.tracks.items.map((value, index) => {
+  { spotifyData.tracks.items.map((value: string[] , index: number) => {
+    
     return (
   <tbody key={index}>
     <tr>

@@ -18,12 +18,12 @@ const dataFromSource = async () => {
 
 const dataFromSpotify = async () => {
     try {
-      const response: any = await axios.get("https://api.spotify.com/v1/playlists/37i9dQZF1DX5BAPG29mHS8?market=MX",
+      const response: any = await axios.get("https://api.spotify.com/v1/playlists/37i9dQZEVXbO3qyFxbkOE1?limit=10",
       {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: "Bearer BQDZD_mDd2pToWG9OxurHxS9ZQZ6G_L-vAKeNSoybquSicuYTi9qaQ78V89lhHlerrLAFaprEX5_-3p1abNMDX_-fD-5cybUnZdzp6c3NJokDyGz1WmKW-veZ5x5M6O-Eh-b44KMevu-o-qk1XYz9llJ55zkXg_A6FSzTGFoqTcEr6s",
+          Authorization: "Bearer BQDik5U4gy6PoWaYhvZ7cOMFDp-qkAZCorR6utTdyxprkDtHIAgWleRtk-IBCP47KoyRYD1ajZn3298YUJd1ucj1xp_AsuowniAc6stAGAqKIdLb4uMgGpYCQCXN077HOOdp6YiTQocKCi9MXnDXqAv3IQSNBnC--AWVNasCBeYAxaY",
         },
       }
       );

@@ -503,8 +503,8 @@ export default function Home() {
       </div>
       <div className="row">
       <div className={`col-12 ${styles.spotify_title}`}>
-            <h2>Spotify {spotifyData.name}</h2>
-            <h3>{spotifyData.description}</h3>
+            <h2>Spotify Top 50: México</h2>
+            <h3>las canciones más escuchadas ahora mismo en México</h3>
           </div>
       </div>
       <div className={`col-12 ${styles.spotify_content}`}>

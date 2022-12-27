@@ -4,7 +4,6 @@ import { GetStaticProps } from 'next';
 import { Spotify } from "../../interfaces";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL_BROADCAST
-const CLIENT_ID = process.env.NEXT_PUBLIC_API
 
 const instance = axios.create({
   baseURL: BASE_URL,
@@ -23,7 +22,7 @@ const dataFromSpotify = async () => {
     {
     params: {id: '37i9dQZEVXbO3qyFxbkOE1'},
     headers: {
-      'X-RapidAPI-Key': `${CLIENT_ID}`,
+      'X-RapidAPI-Key': `${process.env.NEXT_PUBLIC_API}` ,
       'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
     });

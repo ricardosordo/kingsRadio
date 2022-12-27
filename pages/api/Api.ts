@@ -2,6 +2,7 @@ import axios from "axios";
 import { env } from "process";
 import { Spotify } from "../../interfaces";
 
+const MUSIC_API = process.env.NEXT_PUBLIC_RAPID
 
 const instance = axios.create({
   baseURL: 'https://sp2.servidorrprivado.com/',
@@ -20,7 +21,7 @@ const dataFromSpotify = async () => {
     {
     params: {id: '37i9dQZEVXbO3qyFxbkOE1'},
     headers: {
-      'X-RapidAPI-Key': `2ed0e28c43msh513b68b7ba87df0p1582a3jsnecd1045e0f3d` ,
+      'X-RapidAPI-Key': `${MUSIC_API}` ,
       'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
     });

@@ -23,7 +23,7 @@ const dataFromSpotify = async () => {
     {
     params: {id: '37i9dQZEVXbO3qyFxbkOE1'},
     headers: {
-      'X-RapidAPI-Key': CLIENT_ID,
+      'X-RapidAPI-Key': `${CLIENT_ID}`,
       'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
     });

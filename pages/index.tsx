@@ -54,7 +54,9 @@ export default function Home() {
     ulisteners: "",
   });
 
-  const [spotifyData, setSpotifyData] = useState([]);
+  const [spotifyData, setSpotifyData] = useState({
+    list: []
+  });
 
   const pink = {
     background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
@@ -114,7 +116,7 @@ export default function Home() {
     try {
       const response: any = await dataFromSpotify();
       if (response) {
-        setSpotifyData(response);
+        setSpotifyData(response.props);
       }
     } catch (error) {
       return error;
@@ -489,7 +491,7 @@ export default function Home() {
               <th scope="col">Artista</th>
             </tr>
           </thead>
-          {spotifyData?.props?.list.map((value: any, index: number) => {
+          {spotifyData.list.map((value: any, index: number) => {
             return (
               <tbody key={index}>
                 <tr>

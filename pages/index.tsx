@@ -477,7 +477,7 @@ export default function Home() {
       </div>
       <div className="row">
         <div className={`col-12 ${styles.spotify_title}`}>
-          <h2>El Top 50 en México</h2>
+          <h2>El Top 10 en México</h2>
           <h3>Las canciones más escuchadas hoy por hoy en México</h3>
         </div>
       </div>
@@ -491,7 +491,7 @@ export default function Home() {
               <th scope="col">Artista</th>
             </tr>
           </thead>
-          {spotifyData.list.map((value: any, index: number) => {
+          {spotifyData.list.slice(0,10).map((value: any, index: number) => {
             return (
               <tbody key={index}>
                 <tr>

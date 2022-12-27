@@ -47,9 +47,7 @@ interface TracksInfo {
   description: string,
   name: string,
   tracks: {
-    items: {
-      track: string[]
-    }
+    items: []
   },
 };
 
@@ -514,8 +512,7 @@ export default function Home() {
       <th scope="col">Artista</th>
     </tr>
   </thead>
-  { spotifyData.tracks.items.map((value: string[] , index: number) => {
-    
+  { spotifyData.tracks.items.map((value: any , index: number) => {
     return (
   <tbody key={index}>
     <tr>

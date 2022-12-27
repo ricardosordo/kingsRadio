@@ -5,7 +5,6 @@ import { Spotify } from "../../interfaces";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL_BROADCAST
 const CLIENT_ID = process.env.NEXT_PUBLIC_API
-const BASE_API = process.env.NEXT_PUBLIC_LINK
 
 const instance = axios.create({
   baseURL: BASE_URL,
@@ -13,7 +12,7 @@ const instance = axios.create({
 });
 
 const spotyAPI = axios.create({
-  baseURL: BASE_API,
+  baseURL: 'https://spotify81.p.rapidapi.com',
   timeout: 10000,
 });
 

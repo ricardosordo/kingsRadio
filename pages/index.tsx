@@ -307,7 +307,7 @@ export default function Home() {
           >
               <CardCarousel
                 title={"Fiesta de Fin de Año"}
-                descripion={"Con los Aguas Aguas"}
+                descripion={"Festeja en grande con el ritmo de los Aguas Aguas"}
                 date={"Diciembre 30 20:00 hrs, El Cauz"}
                 link={"https://www.eventbrite.com.mx/e/los-aguas-aguas-en-cerveceria-brujula-tickets-479969490667"}
                 eventPic={festival}

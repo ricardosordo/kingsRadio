@@ -131,6 +131,12 @@
   backdrop-filter: blur(2px);
 }
 
+.events_cards img {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: auto;
+}
+
 .events_description {
   font-size: 18px;
   padding: 20px;

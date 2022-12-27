@@ -1,12 +1,10 @@
 import axios from "axios";
 import { env } from "process";
-import { GetStaticProps } from 'next';
 import { Spotify } from "../../interfaces";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL_BROADCAST
 
 const instance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'https://sp2.servidorrprivado.com/',
   timeout: 10000,
 });
 

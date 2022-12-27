@@ -1,4 +1,6 @@
 import axios from "axios";
+import { GetStaticProps } from 'next';
+import { Spotify } from "../../interfaces";
 
 const BASE_URL = 'https://sp2.servidorrprivado.com/';
 
@@ -6,6 +8,12 @@ const instance = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
 });
+
+const spotyAPI = axios.create({
+  baseURL: 'https://api.spotify.com/v1',
+  timeout: 10000,
+});
+
 
 const dataFromSource = async () => {
     try {
@@ -16,20 +24,26 @@ const dataFromSource = async () => {
     }
   }
 
-const dataFromSpotify = async () => {
+ const dataFromSpotify: GetStaticProps = async () => {
     try {
-      const response: any = await axios.get("https://api.spotify.com/v1/playlists/37i9dQZEVXbO3qyFxbkOE1?limit=10",
+      const { data } = await spotyAPI.get<Spotify>("/playlists/37i9dQZEVXbO3qyFxbkOE1",
       {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: "Bearer BQDH7sCs2v5Mx7MFNXW_IL_DOn2-2gU-j6VKo0Z1LUvD9Rp54E9GsJzU8dmmCurXkHB786uDFsCrnlBbaVwoAKzJqM8Xl3_psr6QNSUWoUac6JSzzgbmvPPmjY7i1vABTdMprHqiN-g8ZJyp8gDpnksIDhPKyxH8VcT45CJz_qyoFvQ",
+          Authorization: "Bearer BQDNleK4H4nhggK85PgXz6hDy1uL0-BXxaj3acXJ8PikJCtGtVqkg2v5RB7xeFt8bEwWHfdrydIDSOpk0Ikujq43pYygvoRUsiiDdq2rIN74ieQNEw_sOmlSqj23XAPaDETH4-Aoid2cDoOcxAFDqJ-egPhIBDxfX4xc55rqHnuAX_k",
         },
       }
       );
-      return response.data
+      return {
+        props: {
+          trackname: data.name,
+          list: data.tracks.items,
+          artist: data.tracks,
+        }
+      }
     } catch (error) {
-      return console.log(error)
+      throw new Error
     }
   }
 

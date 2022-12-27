@@ -43,14 +43,6 @@ type DjImage = {
   ulisteners: string;
 };
 
-interface TracksInfo {
-  description: string,
-  name: string,
-  tracks: {
-    items: []
-  },
-};
-
 export default function Home() {
   const [data, setData] = useState<DjImage>({
     art: "",
@@ -62,14 +54,7 @@ export default function Home() {
     ulisteners: "",
   });
 
-  const [spotifyData, setSpotifyData] = useState<TracksInfo>({
-    description: "",
-    name: "",
-    tracks: {
-      items: []
-    },
-    })
-  
+  const [spotifyData, setSpotifyData] = useState([]);
 
   const pink = {
     background: "linear-gradient(109.93deg, #FF006E -8.86%, #3C05B1 109.09%)",
@@ -109,7 +94,6 @@ export default function Home() {
     },
   };
 
-
   useEffect(() => {
     handlerImage();
     handlerSpotifyList();
@@ -126,10 +110,9 @@ export default function Home() {
     }
   };
 
-
-   const handlerSpotifyList = async () => {
+  const handlerSpotifyList = async () => {
     try {
-      const response = await dataFromSpotify();
+      const response: any = await dataFromSpotify();
       if (response) {
         setSpotifyData(response);
       }
@@ -138,7 +121,7 @@ export default function Home() {
     }
   };
 
-  console.log(spotifyData)
+  console.log(spotifyData);
 
   return (
     <>
@@ -498,32 +481,36 @@ export default function Home() {
         </div>
       </div>
       <div className="row">
-      <div className={`col-12 ${styles.spotify_title}`}>
-            <h2>Spotify Top 50: México</h2>
-            <h3>las canciones más escuchadas ahora mismo en México</h3>
-          </div>
+        <div className={`col-12 ${styles.spotify_title}`}>
+          <h2>{spotifyData?.props?.trackname}</h2>
+          <h3>{spotifyData?.props?.description}</h3>
+        </div>
       </div>
       <div className={`col-12 ${styles.spotify_content}`}>
-      <table className="table">
-  <thead>
-    <tr>
-      <th scope="col">Top</th>
-      <th scope="col">Título</th>
-      <th scope="col">Artista</th>
-    </tr>
-  </thead>
-  { spotifyData.tracks.items.map((value: any , index: number) => {
-    return (
-  <tbody key={index}>
-    <tr>
-      <th scope="row">{index + 1}</th>
-      <td>{value.track.name}</td>
-      <td>{value.track.artists[0]?.name} {value.track?.artists[1]?.name} {value.track?.artists[2]?.name}</td>
-    </tr>
-    </tbody>
-    );
-     })}
-    </table>
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">Top</th>
+              <th scope="col">Título</th>
+              <th scope="col">Artista</th>
+            </tr>
+          </thead>
+          {spotifyData?.props?.list.map((value: any, index: number) => {
+            return (
+              <tbody key={index}>
+                <tr>
+                  <th scope="row">{index + 1}</th>
+                  <td>{value.track.name}</td>
+                  <td>
+                    {value.track.artists[0]?.name}{" "}
+                    {value.track?.artists[1]?.name}{" "}
+                    {value.track?.artists[2]?.name}
+                  </td>
+                </tr>
+              </tbody>
+            );
+          })}
+        </table>
       </div>
       <Link
         href="https://wa.link/h6n29v"

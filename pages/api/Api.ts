@@ -15,7 +15,7 @@ const spotyAPI = axios.create({
 });
 
 
-const dataFromSpotify: GetStaticProps = async () => {
+const dataFromSpotify = async () => {
   try {
     const { data } = await spotyAPI.get<Spotify>("/playlist",
     {

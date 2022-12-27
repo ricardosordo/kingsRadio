@@ -124,16 +124,16 @@
   border: none;
   background-color: #F8F8F8;
   box-shadow: 5px 8px 11px 1px rgba(77, 75, 75, 0.14);
-  margin: 3rem 0rem;
-  width: 18rem;
-}
-
-.events_cards img {
-  border-radius: 20px 20px 0 0;
+  margin: 3rem 1rem;
+  width: 80%;
+  height: 86%;
+  background: linear-gradient(207.06deg, #DCDEF1 0%, #FFFFFF 107.5%);
+  backdrop-filter: blur(2px);
 }
 
 .events_description {
   font-size: 18px;
+  padding: 20px;
 }
 
 .programs {
@@ -269,14 +269,22 @@
   text-align: center;
 }
 
+
 .spotify_content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-self: center;
   text-align: left;
-  padding: 2rem 10rem;
-  background-color: #dfdfdf;
+  background-color: #006ae3;
+  padding: 2rem 0rem;
+  border-radius: 40px;
+}
+
+.spotify_content tr {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-family: Manjari;
 }
 
 .footer_content {
@@ -445,6 +453,16 @@
     margin-bottom: 2rem;
     padding-bottom: 4rem;
   }
+
+  .spotify_content {
+    padding: 2rem 1rem;
+    border-radius: 10px;
+  }
+
+  .spotify_content tr {
+    color: #ffffff;
+    font-size: 1rem;
+  }
   
   
 }
@@ -498,6 +516,18 @@
   .sponsors_logo {
     height: 18rem;
   }
+  
+
+  /* .spotify_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    text-align: left;
+    padding: 2rem 2rem;
+    background-color: #a3f4a7;
+  }
+   */
 
   .footer_content {
     margin-top: 4rem;
@@ -571,5 +601,9 @@
     width: 70%;
   }
 
+
+  .spotify_content {
+    padding: 2rem 0rem;
+  }
 
 }  

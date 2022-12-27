@@ -121,8 +121,6 @@ export default function Home() {
     }
   };
 
-  console.log(spotifyData);
-
   return (
     <>
       <Head>
@@ -307,37 +305,32 @@ export default function Home() {
             swipeable={true}
             responsive={responsive}
           >
-            <div>
               <CardCarousel
-                title={"Festival Internacional Xalapa y su Cultura"}
-                descripion={"Expositores de productos locales"}
-                date={"Del 25 al 27 de noviembre, Parque Juaréz"}
-                link={"https://egobierno.xalapa.gob.mx/festival_cultura/"}
+                title={"Fiesta de Fin de Año"}
+                descripion={"Con los Aguas Aguas"}
+                date={"Diciembre 30 20:00 hrs, El Cauz"}
+                link={"https://www.eventbrite.com.mx/e/los-aguas-aguas-en-cerveceria-brujula-tickets-479969490667"}
                 eventPic={festival}
               />
-            </div>
-            <div>
               <CardCarousel
-                title={"Transilvanos en Xalapa 4"}
+                title={"Concierto de Reyes"}
                 descripion={
-                  "Función interactiva de la película The Rocky Horror Picture Show."
+                  "Orquesta Filarmónica de Xalapa en el IMAC"
                 }
-                date={"Sábado 19 de noviembre de 2022 a las 20:00 hrs"}
-                link={"https://www.facebook.com/butacafantastica"}
+                date={"Jueves 5 de enero de 2023 a las 19:00 hrs"}
+                link={"https://www.facebook.com/events/6349027801778156/?active_tab=discussion"}
                 eventPic={rocky}
-              />
-            </div>
-            <div>
+              /> 
               <CardCarousel
                 title={"Visita nocturna Fortaleza de San Carlos"}
                 descripion={
-                  "Un nuevo scouting se aproxima en un lugar lleno de misterio e historia"
+                  "Un scouting se aproxima en un lugar lleno de misterio e historia"
                 }
                 date={"Proximamente"}
                 link={""}
                 eventPic={fortaleza}
               />
-            </div>
+            
           </Carousel>
         </div>
       </div>
@@ -482,15 +475,16 @@ export default function Home() {
       </div>
       <div className="row">
         <div className={`col-12 ${styles.spotify_title}`}>
-          <h2>{spotifyData?.props?.trackname}</h2>
-          <h3>{spotifyData?.props?.description}</h3>
+          <h2>El Top 50 en México</h2>
+          <h3>Las canciones más escuchadas hoy por hoy en México</h3>
         </div>
       </div>
-      <div className={`col-12 ${styles.spotify_content}`}>
-        <table className="table">
+      <div className={`row ${styles.spotify_content}`}>
+      <div className='col-md-8 col-sm-12'>
+        <table className="table table-borderless">
           <thead>
             <tr>
-              <th scope="col">Top</th>
+              <th scope="col">Posición</th>
               <th scope="col">Título</th>
               <th scope="col">Artista</th>
             </tr>
@@ -499,18 +493,20 @@ export default function Home() {
             return (
               <tbody key={index}>
                 <tr>
-                  <th scope="row">{index + 1}</th>
+                  <th scope="row">{index + 1}.</th>
                   <td>{value.track.name}</td>
                   <td>
-                    {value.track.artists[0]?.name}{" "}
-                    {value.track?.artists[1]?.name}{" "}
-                    {value.track?.artists[2]?.name}
+                    {value.track?.artists[0]?.name} {value.track?.artists[1]?.name && ', ' }
+                    {value.track?.artists[1]?.name} {value.track?.artists[2]?.name && ', '}
+                    {value.track?.artists[2]?.name} {value.track?.artists[3]?.name && ', '}
+                    {value.track?.artists[3]?.name}
                   </td>
                 </tr>
               </tbody>
             );
           })}
         </table>
+      </div>
       </div>
       <Link
         href="https://wa.link/h6n29v"
@@ -525,7 +521,6 @@ export default function Home() {
           alt="logo whatsapp"
         />
       </Link>
-
       <footer className="row">
         <div className={styles.footer_content}>
           <div className="col-12">

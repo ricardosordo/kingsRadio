@@ -2,7 +2,7 @@ import axios from "axios";
 import { GetStaticProps } from 'next';
 import { Spotify } from "../../interfaces";
 
-const BASE_URL = 'https://sp2.servidorrprivado.com/';
+const BASE_URL = process.env.URL_BROADCAST
 
 const instance = axios.create({
   baseURL: BASE_URL,
@@ -10,9 +10,32 @@ const instance = axios.create({
 });
 
 const spotyAPI = axios.create({
-  baseURL: 'https://api.spotify.com/v1',
+  baseURL: 'https://spotify81.p.rapidapi.com',
   timeout: 10000,
 });
+
+
+const dataFromSpotify: GetStaticProps = async () => {
+  try {
+    const { data } = await spotyAPI.get<Spotify>("/playlist",
+    {
+    params: {id: '37i9dQZEVXbO3qyFxbkOE1'},
+    headers: {
+      'X-RapidAPI-Key': '2ed0e28c43msh513b68b7ba87df0p1582a3jsnecd1045e0f3d',
+      'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
+    }
+    });
+    return {
+      props: {
+        trackname: data.name,
+        list: data.tracks.items,
+        artist: data.tracks,
+      }
+    }
+  } catch (error) {
+    throw new Error
+  }
+}
 
 
 const dataFromSource = async () => {
@@ -24,28 +47,6 @@ const dataFromSource = async () => {
     }
   }
 
- const dataFromSpotify: GetStaticProps = async () => {
-    try {
-      const { data } = await spotyAPI.get<Spotify>("/playlists/37i9dQZEVXbO3qyFxbkOE1",
-      {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: "Bearer BQDNleK4H4nhggK85PgXz6hDy1uL0-BXxaj3acXJ8PikJCtGtVqkg2v5RB7xeFt8bEwWHfdrydIDSOpk0Ikujq43pYygvoRUsiiDdq2rIN74ieQNEw_sOmlSqj23XAPaDETH4-Aoid2cDoOcxAFDqJ-egPhIBDxfX4xc55rqHnuAX_k",
-        },
-      }
-      );
-      return {
-        props: {
-          trackname: data.name,
-          list: data.tracks.items,
-          artist: data.tracks,
-        }
-      }
-    } catch (error) {
-      throw new Error
-    }
-  }
 
   export {
     dataFromSource,

@@ -83,11 +83,8 @@
 .billboard_player {
   display: flex;
   align-self: center;
-  width: 90px;
-  height: 5rem;
-  border-radius: 20px;
+  width: 250px;
 }
-
 
 .billboard_title {
   margin-top: 20px;
@@ -571,6 +568,11 @@
   .card_playList{
     height: 680px;
   }
+
+  .billboard_player {
+    width: 230px;
+  }
+  
 
   .broadcasterPic  {
     position: relative;

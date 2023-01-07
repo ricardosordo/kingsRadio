@@ -221,11 +221,12 @@ export default function Home() {
             )}
           </div>
           <div className={`col-lg-6 col-md-12 ${styles.billboard}`}>
-            <iframe
-              className={`${styles.billboard_player}`}
-              src="https://servidorrprivado.com/mp3/kingsrad/?t=default"
-            ></iframe>
 
+          <div className={`col-lg-6 col-md-12 ${styles.billboard_player}`}>
+          <audio id="stream" controls preload="none">
+            <source src="https://sp2.servidorrprivado.com/8298/stream" type="audio/mpeg" />
+          </audio>
+          </div>
             {data.djusername === "MIYOREYES" ? (
               <p className={styles.billboard_title}>
                 Historias, Leyendas de México y el Mundo
@@ -534,7 +535,7 @@ export default function Home() {
             </ul>
           </div>
           <div className={`${styles.footer_copyright}`}>
-            <p>Todos los derechos reservados Kings Radio FM 2022</p>
+            <p>Todos los derechos reservados Kings Radio FM 2023</p>
           </div>
         </div>
       </footer>

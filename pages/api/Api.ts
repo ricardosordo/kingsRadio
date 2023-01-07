@@ -2,8 +2,6 @@ import axios from "axios";
 import { env } from "process";
 import { Spotify } from "../../interfaces";
 
-
-
 const instance = axios.create({
   baseURL: 'https://sp2.servidorrprivado.com/',
   timeout: 10000,
